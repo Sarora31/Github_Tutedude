@@ -39,5 +39,9 @@ def form():
 
     return render_template("form.html", error=error)
 
+@app.route("/todo")
+def todo_page():
+    return render_template("to_do_page.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
