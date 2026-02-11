@@ -6,6 +6,12 @@ app = Flask(__name__)
 
 # ---------- MongoDB Atlas Connection ----------
 MONGO_URI = "mongodb+srv://<username>:<password>@cluster0.mongodb.net/test"
+from flask import request, redirect
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017/")  
+db = client.todo_db
+collection = db.todo_items
 client = MongoClient(MONGO_URI)
 db = client.mydb
 collection = db.users
